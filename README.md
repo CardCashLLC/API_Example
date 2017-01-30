@@ -11,6 +11,8 @@ This document describes how to utilize the API Example repo.
   1. CardCash Sandbox API URI
   2. CardCash generated app name
 
+Note: Developers must copy .env_example to .env and prefill said environment variables.
+
 
 ## What does this repo do?
 
