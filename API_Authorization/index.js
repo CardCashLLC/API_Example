@@ -32,7 +32,7 @@ return request(requestOptions)
   })
   .catch(error => {
 
-    console.error('Error from /v3/session: \n', { statusCode: error.statusCode, message: JSON.parse(error.error) } );
+    console.error('Error from /v3/session: \n', { statusCode: error.statusCode, body: JSON.parse(error.error) } );
 
     process.exit();
 
