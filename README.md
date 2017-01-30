@@ -17,4 +17,4 @@ This document describes how to utilize the API Example repo.
 This API Example repo is designed to show a CardCash Partner how utilize CardCashs API in the most basic way.
 
 ### Supported Examples
-* API Authorization
+* API Authorization: `` node API_Authorization/index.js ``

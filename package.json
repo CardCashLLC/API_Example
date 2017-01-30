@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/CardCashLLC/API_Example/issues"
   },
-  "homepage": "https://github.com/CardCashLLC/API_Example#readme"
+  "homepage": "https://github.com/CardCashLLC/API_Example#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
 }
