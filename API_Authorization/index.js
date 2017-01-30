@@ -27,9 +27,13 @@ return request(requestOptions)
 
     console.log('Response from /v3/session: \n', result.body);
 
+    process.exit();
+
   })
   .catch(error => {
 
     console.error('Error from /v3/session: \n', { statusCode: error.statusCode, message: JSON.parse(error.error) } );
+
+    process.exit();
 
   });
