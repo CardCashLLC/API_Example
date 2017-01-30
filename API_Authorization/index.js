@@ -18,9 +18,7 @@ const requestOptions = {
 };
 
 
-console.log(`MAKING REQUEST WITH ${requestOptions.method} METHOD TO ${requestOptions.uri} \n`);
-
-request.defaults({ jar: true });
+console.log(`\n \nMAKING REQUEST WITH ${requestOptions.method} METHOD TO ${requestOptions.uri} \n`);
 
 return request(requestOptions)
   .then(result => {
