@@ -23,78 +23,78 @@ const requestSessionOptions = {
 console.log(`\n \nMAKING REQUEST WITH ${requestSessionOptions.method} METHOD TO ${requestSessionOptions.uri} \n`);
 
 return request(requestSessionOptions)
-.then(result => {
+  .then(result => {
 
-  console.log('Response from /v3/session: \n', result.body);
+    console.log('Response from /v3/session: \n', result.body);
 
-  return {
-    uri: `${process.env.URI}/carts`,
-    headers: {
-      'X-CC-APP': process.env.APP_NAME,
-      'content-type': 'application/json'
-    },
-    body: {
-      action: 'sell'
-    },
-    method: 'POST',
-    jar: cookieJar,
-    json: true,
-    resolveWithFullResponse: true,
-  };
+    return {
+      uri: `${process.env.URI}/carts`,
+      headers: {
+        'X-CC-APP': process.env.APP_NAME,
+        'content-type': 'application/json'
+      },
+      body: {
+        action: 'sell'
+      },
+      method: 'POST',
+      jar: cookieJar,
+      json: true,
+      resolveWithFullResponse: true,
+    };
 
-})
-.then( requestSellCartOptions => {
+  })
+  .then( requestSellCartOptions => {
 
-  console.log(`\n \nMAKING REQUEST WITH ${requestSellCartOptions.method} METHOD TO ${requestSellCartOptions.uri} WITH DATA ${JSON.stringify(requestSellCartOptions.body)} \n`);
+    console.log(`\n \nMAKING REQUEST WITH ${requestSellCartOptions.method} METHOD TO ${requestSellCartOptions.uri} WITH DATA ${JSON.stringify(requestSellCartOptions.body)} \n`);
 
-  return request(requestSellCartOptions);
+    return request(requestSellCartOptions);
 
-})
-.then(result => {
+  })
+  .then(result => {
 
-  console.log('Response from /v3/carts: \n', result.body);
+    console.log('Response from /v3/carts: \n', result.body);
 
-  return {
-    uri: `${process.env.URI}/carts/${result.body.cartId}/cards`,
-    headers: {
-      'X-CC-APP': process.env.APP_NAME,
-      'content-type': 'application/json'
-    },
-    body: {
-      card: {
-        merchantId: 99,
-        enterValue: 100,
-        number: "5555555682054671",
-        pin: "1234"
-      }
-    },
-    method: 'POST',
-    jar: cookieJar,
-    json: true,
-    resolveWithFullResponse: true
-  };
+    return {
+      uri: `${process.env.URI}/carts/${result.body.cartId}/cards`,
+      headers: {
+        'X-CC-APP': process.env.APP_NAME,
+        'content-type': 'application/json'
+      },
+      body: {
+        card: {
+          merchantId: 99,
+          enterValue: 100,
+          number: "5555555682054671",
+          pin: "1234"
+        }
+      },
+      method: 'POST',
+      jar: cookieJar,
+      json: true,
+      resolveWithFullResponse: true
+    };
 
-})
-.then( requestSellCardOptions => {
+  })
+  .then( requestSellCardOptions => {
 
-  console.log(`\n \nMAKING REQUEST WITH ${requestSellCardOptions.method} METHOD TO ${requestSellCardOptions.uri} WITH DATA ${JSON.stringify(requestSellCardOptions.body)} \n`);
+    console.log(`\n \nMAKING REQUEST WITH ${requestSellCardOptions.method} METHOD TO ${requestSellCardOptions.uri} WITH DATA ${JSON.stringify(requestSellCardOptions.body)} \n`);
 
-  return request(requestSellCardOptions);
+    return request(requestSellCardOptions);
 
-})
-.then(result => {
+  })
+  .then(result => {
 
-  console.log(`Response from /v3/carts/${result.body.cartId}: \n`, result.body);
+    console.log(`Response from /v3/carts/${result.body.cartId}: \n`, result.body);
 
-  process.exit();
+    process.exit();
 
-})
-.catch(error => {
+  })
+  .catch(error => {
 
-  const errorPath = error.options.uri.slice( error.options.uri.indexOf('/v3'), error.options.uri.length );
+    const errorPath = error.options.uri.slice( error.options.uri.indexOf('/v3'), error.options.uri.length );
 
-  console.error(`Error from ${errorPath}: \n`, { statusCode: error.statusCode, body: error.error } );
+    console.error(`Error from ${errorPath}: \n`, { statusCode: error.statusCode, body: error.error } );
 
-  process.exit();
+    process.exit();
 
-});
+  });
