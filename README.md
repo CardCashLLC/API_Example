@@ -21,4 +21,5 @@ This API Example repo is designed to show a CardCash Partner how utilize CardCas
 ### Supported Examples
 * API Authorization: `` node API_Authorization/index.js ``
 * Buy_Create_Cart: `` node Buy_Create_Cart/index.js ``
-* Sell_Create_Cart ``node Sell_Create_Cart/index.js ``
+* Sell_Create_Cart: ``node Sell_Create_Cart/index.js ``
+* Sell_Add_Card_To_Cart: ``node Sell_Add_Card_To_Card/index.js  ``
