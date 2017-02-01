@@ -82,7 +82,7 @@ return request(requestSessionOptions)
   })
   .then(result => {
 
-    console.log(`Response from /v3/carts/${result.body.cartId}: \n`, result.body);
+    console.log(`Response from /v3/carts/${result.body.cartId}/cards: \n`, result.body);
 
     return {
       uri: `${process.env.URI}/carts/${result.body.cartId}/cards/${result.body.cards[0].id}`,
