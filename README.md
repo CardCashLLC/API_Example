@@ -24,3 +24,4 @@ This API Example repo is designed to show a CardCash Partner how utilize CardCas
 * Sell_Create_Cart: ``node Sell_Create_Cart/index.js ``
 * Sell_Add_Card_To_Cart: ``node Sell_Add_Card_To_Card/index.js  ``
 * Sell_Update_Card_In_Cart: ``node Sell_Update_Card_In_Cart/index.js  ``
+* Sell_Get_Merchants: ``node Sell_Get_Merchants/index.js  ``
