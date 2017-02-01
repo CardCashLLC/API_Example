@@ -84,7 +84,7 @@ return request(requestSessionOptions)
 })
 .then(result => {
 
-  console.log('Response from /v3/carts: \n', result.body);
+  console.log(`Response from /v3/carts/${result.body.cartId}: \n`, result.body);
 
   process.exit();
 
