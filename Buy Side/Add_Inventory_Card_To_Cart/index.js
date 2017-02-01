@@ -23,7 +23,7 @@ const requestSessionOptions = {
 console.log(`\n \nMAKING REQUEST WITH ${requestSessionOptions.method} METHOD TO ${requestSessionOptions.uri} \n`);
 
 return request(requestSessionOptions)
-  .then(result => {
+  .then( result => {
 
     console.log('Response from /v3/session: \n', result.body);
 
@@ -50,7 +50,7 @@ return request(requestSessionOptions)
     return request(requestBuyCartOptions);
 
   })
-  .then(result => {
+  .then( result => {
 
     console.log('Response from /v3/carts: \n', result.body);
 
@@ -83,14 +83,14 @@ return request(requestSessionOptions)
     return request(requestBuyInventoryCardOptions);
 
   })
-  .then(result => {
+  .then( result => {
 
     console.log(`Response from /v3/carts/${result.body.cartId}/cards: \n`, result.body);
 
     process.exit();
 
   })
-  .catch(error => {
+  .catch( error => {
 
     const errorPath = error.options.uri.slice( error.options.uri.indexOf('/v3'), error.options.uri.length );
 
